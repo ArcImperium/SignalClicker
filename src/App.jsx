@@ -27,6 +27,14 @@ function App() {
     setTimeout(() => {setPulsate(false)}, 500)
   } 
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSignals(prev => prev + autoMultiplier)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [autoMultiplier])
+
   return (
     <>
     <button className="bank-button" onClick={() => setShowBank(true)}>Bank</button>
