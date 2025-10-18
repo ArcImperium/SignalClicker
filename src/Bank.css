@@ -1,0 +1,31 @@
+.bank-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: cadetblue;
+    z-index: 100;
+}
+
+.bank-display {
+    position: fixed;
+    height: 80%;
+    width: 40%;
+    left: 5%;
+    top: 10%;
+
+    background-color: white;
+    z-index: 101;
+    border-radius: 20px;
+}
+
+.bank-slider-container {
+    position: fixed;
+    height: 60%;
+    width: 40%;
+    right: 5%;
+    bottom: 10%;
+
+    background-color: white;
+    z-index: 101;
+    border-radius: 20px;
+}

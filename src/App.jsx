@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import './App.css'
 import ClickerImage from './assets/react.svg'
-import Bank from './bank.jsx'
+import Bank from './Bank.jsx'
 
 function App() {
   useEffect(() => {
@@ -12,7 +12,6 @@ function App() {
   const [pulsate, setPulsate] = useState(false)
   const [multiplier, setMultiplier] = useState(1)
   const [autoMultiplier, setAutoMultiplier] = useState(0)
-  const [goAuto, setGoAuto] = useState(false)
 
   const [plus5Cost, setPlus5Cost] = useState(10)
   const [plus10Cost, setPlus10Cost] = useState(50)
@@ -37,8 +36,8 @@ function App() {
 
   return (
     <>
-    <button className="bank-button" onClick={() => setShowBank(true)}>Bank</button>
-    {showBank && (<Bank/>)}
+    <button className="bank-button" onClick={() => setShowBank(true)}>BANK</button>
+    {showBank && (<Bank setShowBank={setShowBank} signals={signals}/>)}
     <div className="clicker-container">
       <h1 className="display-multiplier">Multiplier: {multiplier}</h1>
       <h1 className="display-multiplier">Generator Multiplier: {autoMultiplier}</h1>
