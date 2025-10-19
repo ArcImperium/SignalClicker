@@ -59,6 +59,10 @@
     font-size: 30px;
 }
 
+.loan:hover {
+    box-shadow: inset 0 0 10px 5px cornflowerblue;
+}
+
 .static-loan {
     position: relative;
     width: 80%;
@@ -72,6 +76,10 @@
     color: white;
     border: 5px solid black;
     font-size: 30px;
+}
+
+.static-loan:hover {
+    box-shadow: inset 0 0 10px 5px cornflowerblue;
 }
 
 .bank-slider-container {
