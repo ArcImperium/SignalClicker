@@ -44,6 +44,19 @@
     box-shadow: inset 0 0 10px 5px cornflowerblue;
 }
 
+.static-loan-button {
+    position: relative;
+    width: 35%;
+    height: 80px;
+    margin: 5%;
+
+    background-color: lightsteelblue;
+    color: white;
+    border-radius: 10px;
+    border: 5px solid black;
+    font-size: 50px;
+}
+
 .loan {
     position: relative;
     width: 80%;

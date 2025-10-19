@@ -1,12 +1,16 @@
 import {useState} from 'react'
 import './Bank.css'
 
-function Bank({setShowBank, signals}) {
+function Bank({setShowBank, signals, setSignals}) {
     const [showSlider, setShowSlider] = useState(false)
     const [sliderValue, setSliderValue] = useState(0)
     const [sliderTime, setSliderTime] = useState(0)
     const [loan1Interest, setLoan1Interest] = useState(0)
     const [loan2Interest, setLoan2Interest] = useState(0)
+    const [loan1Time, setLoan1Time] = useState(0)
+    const [loan2Time, setLoan2Time] = useState(0)
+    const [loan1Value, setLoan1Value] = useState(0)
+    const [loan2Value, setLoan2Value] = useState(0)
 
     const [showLoan1, setShowLoan1] = useState(false)
     const [loan1Active, setLoan1Active] = useState(false)
@@ -22,6 +26,21 @@ function Bank({setShowBank, signals}) {
         }
     }
 
+    function startLoan1() {
+        setLoan1Active(true)
+        setLoan1Value(sliderValue)
+        setSignals(prev => prev + sliderValue)
+        setLoan1Time(sliderTime)
+        setTimeout(() => {setSignals(prev => prev - (loan1Value + loan1Interest)); setLoan1Active(false)}, loan1Time * 1000)
+    }
+    function startLoan2() {
+        setLoan2Active(true)
+        setLoan2Value(sliderValue)
+        setSignals(prev => prev + sliderValue)
+        setLoan2Time(sliderTime)
+        setTimeout(() => {setSignals(prev => prev - (loan2Value + loan2Interest)); setLoan2Active(false)}, loan2Time * 1000)
+    }
+
     return(
         <>
         <div className="bank-container">
@@ -32,8 +51,10 @@ function Bank({setShowBank, signals}) {
         </div>
         <div className="bank-display">
             <div className="loan-button-display">
-                <button className="loan-button" onClick={() => {}}>+</button>
-                <button className="loan-button" onClick={() => {}}>-</button>
+                {(showLoan1 && !loan1Active) && (<button className="loan-button" onClick={() => startLoan1()}>+</button>)}
+                {(!showLoan1 || loan1Active) && (<button className="static-loan-button">+</button>)}
+                {(showLoan2 && !loan2Active) && (<button className="loan-button" onClick={() => startLoan2()}>+</button>)}
+                {(!showLoan2 || loan2Active) && (<button className="static-loan-button">+</button>)}
             </div>
             {showLoan1 && (<button className="loan" onClick={() => {setShowLoan1(false), setShowSlider(false)}}>Loan 1 {loan1Active && (<>(Active)</>)}</button>)}
             {!showLoan1 && (<button className="static-loan" onClick={() => {setShowLoan1(true), setShowLoan2(false), setShowSlider(true)}}>Loan 1 {loan1Active && (<>(Active)</>)}</button>)}

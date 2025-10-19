@@ -37,7 +37,7 @@ function App() {
   return (
     <>
     <button className="bank-button" onClick={() => setShowBank(true)}>BANK</button>
-    {showBank && (<Bank setShowBank={setShowBank} signals={signals}/>)}
+    {showBank && (<Bank setShowBank={setShowBank} signals={signals} setSignals={setSignals}/>)}
     <div className="clicker-container">
       <h1 className="display-multiplier">Multiplier: {multiplier}</h1>
       <h1 className="display-multiplier">Generator Multiplier: {autoMultiplier}</h1>
