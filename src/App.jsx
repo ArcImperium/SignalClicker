@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import './App.css'
-import ClickerImage from './assets/react.svg'
+import ClickerImage from './assets/signal_tower.png'
 import Bank from './Bank.jsx'
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
 
   const [signals, setSignals] = useState(0)
   const [pulsate, setPulsate] = useState(false)
+  const [showSignals, setShowSignals] = useState(false)
   const [multiplier, setMultiplier] = useState(1)
   const [autoMultiplier, setAutoMultiplier] = useState(0)
 
@@ -23,7 +24,9 @@ function App() {
     setSignals(prev => prev + multiplier)
 
     setPulsate(true)
+    setShowSignals(true)
     setTimeout(() => {setPulsate(false)}, 500)
+    setTimeout(() => {setShowSignals(false)}, 500)
   } 
 
   useEffect(() => {
@@ -42,6 +45,11 @@ function App() {
       <h1 className="display-multiplier">Multiplier: {multiplier}</h1>
       <h1 className="display-multiplier">Generator Multiplier: {autoMultiplier}</h1>
       <img className={`clicker-image ${pulsate ? 'pulsating' : ''}`} src={ClickerImage} onClick={() => click()}/>
+      {showSignals && (<div className="signal-container">
+        <div className={`signal s1 ${showSignals ? 'pulsating' : ''}`}></div>
+        <div className={`signal s2 ${showSignals ? 'pulsating' : ''}`}></div>
+        <div className={`signal s3 ${showSignals ? 'pulsating' : ''}`}></div>
+      </div>)}
     </div>
     <div className="display-container">
       <h1 className="display">Signals: {signals}</h1>
