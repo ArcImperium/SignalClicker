@@ -1,3 +1,13 @@
+Ok, here we go:
+First, locate the website, then start clicking.
+Bear with me, the notifications only become more rare, so enjoy them while you can.
+As you obtain more signals by clicking (I know the animations are cool), you can purchase multiplier upgrades from the shop.
+At some point, you may find yourself in a tough spot on this journey to complete this endless game, which is why the bank exists.
+Navigate to the bank tab to borrow signals in the form of a loan.
+To do so, please select either Loan 1 or Loan 2 (it doesn't matter), then select the loan amount and time in which you will pay it off.
+This subsequently changes the amount of interest you owe, therefore when the time runs out, the bank will take that many signals away from you.
+See how far you can get with rising prices and inflation in this economy.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
