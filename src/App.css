@@ -114,16 +114,15 @@
 
 .clicks-container {
   position: fixed;
-  height: 55%;
+  height: 60%;
   width: 5%;
   top: 30%;
   left: 47.5%;
 
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
-  padding-bottom: 30px;
 
   background-color: white;
   border-radius: 20px;
