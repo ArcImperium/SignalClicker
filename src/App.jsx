@@ -81,46 +81,46 @@ function App() {
     </div>
     <div className="clicker-upgrades-container">
       {signals >= plus1Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - plus1Cost), setMultiplier(prev => prev + 1), setPlus1Cost(prev => Math.floor(prev * 1.5)), setNumPlus1(prev => prev + 1)}}>
-        Smoke Signal ({numPlus1})<br/>simple but effective<br/>Cost: {plus1Cost} Signals
+        Smoke Signal ({numPlus1})<br/>simple but effective +1 to Multiplier<br/>Cost: {plus1Cost} Signals
       </button>)}
       {signals < plus1Cost && (<button className="static-upgrade-button">
-        Smoke Signal ({numPlus1})<br/>simple but effective<br/>Cost: {plus1Cost} Signals
+        Smoke Signal ({numPlus1})<br/>simple but effective +1 to Multiplier<br/>Cost: {plus1Cost} Signals
       </button>)}
       {signals >= plus5Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - plus5Cost), setMultiplier(prev => prev + 5), setPlus5Cost(prev => Math.floor(prev * 1.5)), setNumPlus5(prev => prev + 1)}}>
-        Flag ({numPlus5})<br/>show 'em who's in charge<br/>Cost: {plus5Cost} Signals
+        Flag ({numPlus5})<br/>show 'em who's in charge +5 to Multiplier<br/>Cost: {plus5Cost} Signals
       </button>)}
       {signals < plus5Cost && (<button className="static-upgrade-button">
-        Flag ({numPlus5})<br/>show 'em who's in charge<br/>Cost: {plus5Cost} Signals
+        Flag ({numPlus5})<br/>show 'em who's in charge +5 to Multiplier<br/>Cost: {plus5Cost} Signals
       </button>)}
       {signals >= plus30Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - plus30Cost), setMultiplier(prev => prev + 30), setPlus30Cost(prev => Math.floor(prev * 1.5)), setNumPlus30(prev => prev + 1)}}>
-        Telegraph ({numPlus30})<br/>dots and dashes<br/>Cost: {plus30Cost} Signals
+        Telegraph ({numPlus30})<br/>dots and dashes +30 to Multiplier<br/>Cost: {plus30Cost} Signals
       </button>)}
       {signals < plus30Cost && (<button className="static-upgrade-button">
-        Telegraph ({numPlus30})<br/>dots and dashes<br/>Cost: {plus30Cost} Signals
+        Telegraph ({numPlus30})<br/>dots and dashes +30 to Multiplier<br/>Cost: {plus30Cost} Signals
       </button>)}
       {signals >= autoPlus20Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - autoPlus20Cost), setAutoMultiplier(prev => prev + 20), setAutoPlus20Cost(prev => Math.floor(prev * 1.5)), setNumAutoPlus20(prev => prev + 1)}}>
-        Radio ({numAutoPlus20})<br/>wireless broadcasting ...tskrr...<br/>Cost: {autoPlus20Cost} Signals
+        Radio ({numAutoPlus20})<br/>wireless broadcasting ...tskrr... +20 to Auto Multiplier<br/>Cost: {autoPlus20Cost} Signals
       </button>)}
       {signals < autoPlus20Cost && (<button className="static-upgrade-button">
-        Radio ({numAutoPlus20})<br/>wireless broadcasting ...tskrr...<br/>Cost: {autoPlus20Cost} Signals
+        Radio ({numAutoPlus20})<br/>wireless broadcasting ...tskrr... +20 to Auto Multiplier<br/>Cost: {autoPlus20Cost} Signals
       </button>)}
       {signals >= autoPlus150Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - autoPlus150Cost), setAutoMultiplier(prev => prev + 150), setAutoPlus150Cost(prev => Math.floor(prev * 1.5)), setNumAutoPlus150(prev => prev + 1)}}>
-        Telephone ({numAutoPlus150})<br/>individual voice communication<br/>Cost: {autoPlus150Cost} Signals
+        Telephone ({numAutoPlus150})<br/>individual voice communication +150 to Auto Multiplier<br/>Cost: {autoPlus150Cost} Signals
       </button>)}
       {signals < autoPlus150Cost && (<button className="static-upgrade-button">
-        Telephone ({numAutoPlus150})<br/>individual voice communication<br/>Cost: {autoPlus150Cost} Signals
+        Telephone ({numAutoPlus150})<br/>individual voice communication +150 to Auto Multiplier<br/>Cost: {autoPlus150Cost} Signals
       </button>)}
       {signals >= autoPlus400Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - autoPlus400Cost), setAutoMultiplier(prev => prev + 400), setAutoPlus400Cost(prev => Math.floor(prev * 1.5)), setNumAutoPlus400(prev => prev + 1)}}>
-        Internet ({numAutoPlus400})<br/>the digital web, javascript, and cat videos<br/>Cost: {autoPlus400Cost} Signals
+        Internet ({numAutoPlus400})<br/>the digital web, javascript, and cat videos +400 to Auto Multiplier<br/>Cost: {autoPlus400Cost} Signals
       </button>)}
       {signals < autoPlus400Cost && (<button className="static-upgrade-button">
-        Internet ({numAutoPlus400})<br/>the digital web, javascript, and cat videos<br/>Cost: {autoPlus400Cost} Signals
+        Internet ({numAutoPlus400})<br/>the digital web, javascript, and cat videos +400 to Auto Multiplier<br/>Cost: {autoPlus400Cost} Signals
       </button>)}
       {signals >= plus500Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - plus500Cost), setMultiplier(prev => prev + 500), setPlus500Cost(prev => Math.floor(prev * 1.5)), setNumPlus500(prev => prev + 1)}}>
-        Satellite ({numPlus500})<br/>now available in orbit<br/>Cost: {plus500Cost} Signals
+        Satellite ({numPlus500})<br/>now available in orbit +500 to Multiplier<br/>Cost: {plus500Cost} Signals
       </button>)}
       {signals < plus500Cost && (<button className="static-upgrade-button">
-        Satellite ({numPlus500})<br/>now available in orbit<br/>Cost: {plus500Cost} Signals
+        Satellite ({numPlus500})<br/>now available in orbit +500 to Multiplier<br/>Cost: {plus500Cost} Signals
       </button>)}
     </div>
     </>
