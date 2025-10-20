@@ -14,9 +14,13 @@ function App() {
   const [multiplier, setMultiplier] = useState(1)
   const [autoMultiplier, setAutoMultiplier] = useState(0)
 
-  const [plus5Cost, setPlus5Cost] = useState(10)
-  const [plus10Cost, setPlus10Cost] = useState(50)
-  const [autoPlus5Cost, setAutoPlus5Cost] = useState(250)
+  const [plus1Cost, setPlus1Cost] = useState(25)
+  const [plus5Cost, setPlus5Cost] = useState(100)
+  const [plus30Cost, setPlus30Cost] = useState(750)
+  const [autoPlus20Cost, setAutoPlus20Cost] = useState(5000)
+  const [autoPlus150Cost, setAutoPlus150Cost] = useState(30000)
+  const [autoPlus400Cost, setAutoPlus400Cost] = useState(75000)
+  const [plus500Cost, setPlus500Cost] = useState(100000)
 
   const [showBank, setShowBank] = useState(false)
 
@@ -65,23 +69,47 @@ function App() {
       <h1 className="display">Signals: {signals}</h1>
     </div>
     <div className="clicker-upgrades-container">
+      {signals >= plus1Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - plus1Cost), setMultiplier(prev => prev + 1), setPlus1Cost(prev => Math.floor(prev * 1.5))}}>
+        +1<br/>Cost: {plus1Cost}
+      </button>)}
+      {signals < plus1Cost && (<button className="static-upgrade-button">
+        +1<br/>Cost: {plus1Cost}
+      </button>)}
       {signals >= plus5Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - plus5Cost), setMultiplier(prev => prev + 5), setPlus5Cost(prev => Math.floor(prev * 1.5))}}>
         +5<br/>Cost: {plus5Cost}
       </button>)}
       {signals < plus5Cost && (<button className="static-upgrade-button">
         +5<br/>Cost: {plus5Cost}
       </button>)}
-      {signals >= plus10Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - plus10Cost), setMultiplier(prev => prev + 10), setPlus10Cost(prev => Math.floor(prev * 1.5))}}>
-        +10<br/>Cost: {plus10Cost}
+      {signals >= plus30Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - plus30Cost), setMultiplier(prev => prev + 30), setPlus30Cost(prev => Math.floor(prev * 1.5))}}>
+        +30<br/>Cost: {plus30Cost}
       </button>)}
-      {signals < plus10Cost && (<button className="static-upgrade-button">
-        +10<br/>Cost: {plus10Cost}
+      {signals < plus30Cost && (<button className="static-upgrade-button">
+        +30<br/>Cost: {plus30Cost}
       </button>)}
-      {signals >= autoPlus5Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - autoPlus5Cost), setAutoMultiplier(prev => prev + 5), setAutoPlus5Cost(prev => Math.floor(prev * 1.5))}}>
-        +5 Generator<br/>Cost: {autoPlus5Cost}
+      {signals >= autoPlus20Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - autoPlus20Cost), setAutoMultiplier(prev => prev + 20), setAutoPlus20Cost(prev => Math.floor(prev * 1.5))}}>
+        +20 Generator<br/>Cost: {autoPlus20Cost}
       </button>)}
-      {signals < autoPlus5Cost && (<button className="static-upgrade-button">
-        +5 Generator<br/>Cost: {autoPlus5Cost}
+      {signals < autoPlus20Cost && (<button className="static-upgrade-button">
+        +20 Generator<br/>Cost: {autoPlus20Cost}
+      </button>)}
+      {signals >= autoPlus150Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - autoPlus150Cost), setAutoMultiplier(prev => prev + 150), setAutoPlus150Cost(prev => Math.floor(prev * 1.5))}}>
+        +150 Generator<br/>Cost: {autoPlus150Cost}
+      </button>)}
+      {signals < autoPlus150Cost && (<button className="static-upgrade-button">
+        +150 Generator<br/>Cost: {autoPlus150Cost}
+      </button>)}
+      {signals >= autoPlus400Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - autoPlus400Cost), setAutoMultiplier(prev => prev + 400), setAutoPlus400Cost(prev => Math.floor(prev * 1.5))}}>
+        +400 Generator<br/>Cost: {autoPlus400Cost}
+      </button>)}
+      {signals < autoPlus400Cost && (<button className="static-upgrade-button">
+        +400 Generator<br/>Cost: {autoPlus400Cost}
+      </button>)}
+      {signals >= plus500Cost && (<button className="upgrade-button" onClick={() => {setSignals(prev => prev - plus500Cost), setMultiplier(prev => prev + 500), setPlus500Cost(prev => Math.floor(prev * 1.5))}}>
+        +500<br/>Cost: {plus500Cost}
+      </button>)}
+      {signals < plus500Cost && (<button className="static-upgrade-button">
+        +500<br/>Cost: {plus500Cost}
       </button>)}
     </div>
     </>
