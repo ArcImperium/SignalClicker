@@ -27,18 +27,28 @@ function Bank({setShowBank, signals, setSignals}) {
     }
 
     function startLoan1() {
+        const val = Number(sliderValue)
+        const time = Number(sliderTime)
+        const int = Math.floor(val * 0.01 * time)
+
         setLoan1Active(true)
-        setLoan1Value(sliderValue)
-        setSignals(prev => prev + sliderValue)
-        setLoan1Time(sliderTime)
-        setTimeout(() => {setSignals(prev => prev - (loan1Value + loan1Interest)); setLoan1Active(false)}, loan1Time * 1000)
+        setLoan1Value(val)
+        setLoan1Interest(int)
+        setLoan1Time(time)
+        setSignals(prev => prev + val)
+        setTimeout(() => {setSignals(prev => prev - (val + int)); setLoan1Active(false)}, time * 1000)
     }
     function startLoan2() {
+        const val = Number(sliderValue)
+        const time = Number(sliderTime)
+        const int = Math.floor(val * 0.01 * time)
+
         setLoan2Active(true)
-        setLoan2Value(sliderValue)
-        setSignals(prev => prev + sliderValue)
-        setLoan2Time(sliderTime)
-        setTimeout(() => {setSignals(prev => prev - (loan2Value + loan2Interest)); setLoan2Active(false)}, loan2Time * 1000)
+        setLoan2Value(val)
+        setLoan2Interest(int)
+        setLoan2Time(time)
+        setSignals(prev => prev + val)
+        setTimeout(() => {setSignals(prev => prev - (val + int)); setLoan2Active(false)}, time * 1000)
     }
 
     return(
@@ -62,7 +72,7 @@ function Bank({setShowBank, signals, setSignals}) {
             {!showLoan2 && (<button className="static-loan" onClick={() => {setShowLoan2(true), setShowLoan1(false), setShowSlider(true)}}>Loan 2 {loan2Active && (<>(Active)</>)}</button>)}
         </div>
         <div className="bank-slider-container">
-            {showSlider && (<><input className="bank-slider" type="range" min="0" max={signals * 10} value={sliderValue} onChange={(e) => {setSliderValue(e.target.value), changeInterest()}}/>
+            {showSlider && (<><input className="bank-slider" type="range" min="0" max={signals * 10} value={sliderValue} onChange={(e) => {setSliderValue(Number(e.target.value)), changeInterest()}}/>
             <h1>Signals: {sliderValue}</h1></>)}
             {showSlider && (<><input className="bank-slider" type="range" min="0" max="300" value={sliderTime} onChange={(e) => {setSliderTime(e.target.value), changeInterest()}}/>
             <h1>Time: {sliderTime} sec</h1>
