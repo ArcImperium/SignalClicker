@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import './App.css'
 import ClickerImage from './assets/signal_tower.png'
-import Bank from './Bank.jsx'
+import Bank from './bank.jsx'
 
 function App() {
   useEffect(() => {
