@@ -112,6 +112,29 @@
   100% {height: 75%; width: 75%}
 }
 
+.clicks-container {
+  position: fixed;
+  height: 55%;
+  width: 5%;
+  top: 30%;
+  left: 47.5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-bottom: 30px;
+
+  background-color: white;
+  border-radius: 20px;
+}
+
+.display-clicks {
+  transform: rotate(270deg);
+
+  white-space: nowrap;
+}
+
 .display-container {
   position: fixed;
   width: 30%;

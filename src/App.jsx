@@ -65,6 +65,9 @@ function App() {
         <div className={`signal s3 ${showSignals ? 'pulsating' : ''}`}></div>
       </div>)}
     </div>
+    <div className="clicks-container">
+      <h1 className="display-clicks">Clicks: {numClicks}</h1>
+    </div>
     <div className="display-container">
       <h1 className="display">Signals: {signals}</h1>
     </div>
