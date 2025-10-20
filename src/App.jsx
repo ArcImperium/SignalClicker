@@ -20,6 +20,9 @@ function App() {
 
   const [showBank, setShowBank] = useState(false)
 
+  const [messageCounter, setMessageCounter] = useState(1)
+  const [numClicks, setNumClicks] = useState(0)
+
   function click() {
     setSignals(prev => prev + multiplier)
 
@@ -27,6 +30,13 @@ function App() {
     setShowSignals(true)
     setTimeout(() => {setPulsate(false)}, 500)
     setTimeout(() => {setShowSignals(false)}, 500)
+
+    setNumClicks(prev => prev + 1)
+    if (numClicks === (messageCounter - 1)) {
+      const newMessage = `You have reached ${messageCounter} clicks!`
+      alert(newMessage)
+      setMessageCounter(prev => prev * 10)
+    }
   } 
 
   useEffect(() => {
